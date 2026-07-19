@@ -22,7 +22,7 @@ A Python script that **sweeps the entire balance** from multiple wallets to a si
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/username/pharos-mainnet-sender.git
+   git clone https://github.com/artezyexe/PharosSender.git
    cd pharos-mainnet-sender
    ```
 
