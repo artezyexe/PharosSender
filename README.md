@@ -5,7 +5,7 @@ Script Python untuk mengirim **seluruh saldo (sweep)** dari banyak wallet ke sat
 ## ✨ Fitur
 
 - Mendukung wallet dalam bentuk **private key** maupun **seed phrase** (12/15/18/21/24 kata)
-- Bisa memuat wallet dari dua file sekaligus (`wallet.txt` & `walletv2.txt`)
+- Bisa memuat wallet dari dua file sekaligus (`wallet.txt` & `walletv2.txt`, keduanya opsional — script tetap jalan meski hanya salah satu yang ada)
 - Preview saldo semua akun sebelum eksekusi (real-time dari RPC)
 - Eksekusi paralel per-batch menggunakan `ThreadPoolExecutor`
 - Retry otomatis dengan backoff saat RPC mengembalikan error rate limit
@@ -60,7 +60,10 @@ Script Python untuk mengirim **seluruh saldo (sweep)** dari banyak wallet ke sat
    RETRY_DELAY=5
    ```
 
-5. **Siapkan file wallet** (`wallet.txt` dan/atau `walletv2.txt`)
+5. **Siapkan file wallet**
+
+   - `wallet.txt` — wajib ada.
+   - `walletv2.txt` — **opsional**. Kalau file ini tidak ada, script tetap jalan dan hanya akan memuat wallet dari `wallet.txt` (akan muncul peringatan "tidak ditemukan" untuk `walletv2.txt`, ini normal).
 
    Satu baris = satu wallet. Bisa berupa private key atau seed phrase:
    ```
@@ -104,4 +107,4 @@ Script Python untuk mengirim **seluruh saldo (sweep)** dari banyak wallet ke sat
 
 ## 📄 Lisensi
 
-Tambahkan lisensi sesuai kebutuhan Anda (misalnya MIT).
+Project ini menggunakan lisensi [MIT](LICENSE).
